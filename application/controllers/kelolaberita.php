@@ -27,7 +27,7 @@ class kelolaberita extends CI_Controller {
 
       function edit_berita(){
             $file = [
-                  'upload_path' => './assets/images/',
+                  'upload_path' => './assets/images/Upload',
                   'allowed_types' => '*',
                   'overwrite' => TRUE,
                   'encrypt_name' => TRUE

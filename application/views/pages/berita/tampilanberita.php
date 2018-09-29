@@ -23,7 +23,7 @@
 								<div class="col-12">
 									<div itemprop="text" class="entry-content">
 										<h2><?php echo $b['berita_judul'];?></h2><hr/>
-										<img src="<?php echo base_url().'assets/images/'.$b['berita_image'];?>">
+										<img src="<?php echo base_url().'assets/images/Upload/'.$b['berita_image'];?>" class="img-fluid">
 										<?php echo $b['berita_isi'];?>
 									</div>
 								</div>

@@ -204,11 +204,11 @@
                                 <li>
                                     <a class="has-arrow" href="#" aria-expanded="false">Berita</a>
                                         <ul aria-expanded="false" class="collapse">
-                                            <li><a href="<?php echo base_url()?>berita">Tambah Berita</a></li>
-                                            <li><a href="<?php echo base_url()?>kelolaberita">Kelola Berita</a></li>
+                                            <li><a href="<?php echo site_url('berita')?>">Tambah Berita</a></li>
+                                            <li><a href="<?php echo site_url('kelolaberita')?>">Kelola Berita</a></li>
                                         </ul>
                                 </li>
-                                <li><a href="#">Kelola Sarpras</a></li>
+                                <li><a href="<?php echo site_url('formtest')?>">Kelola Sarpras</a></li>
                                 <li>
                                     <a class="has-arrow" href="#" aria-expanded="false">Menu 2.3</a>
                                     <ul aria-expanded="false" class="collapse">

@@ -8,7 +8,6 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
             parent::__construct();
             $this->load->model('m_berita');
             $this->load->library('upload');
-
           }
           function Index()
           {

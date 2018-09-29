@@ -19,4 +19,10 @@ class m_kelolaberita extends CI_Model{
 		$hasil=$this->db->query("UPDATE berita SET berita_judul='$berita_judul',berita_isi='$berita_isi',berita_image='$berita_image' WHERE berita_id='$berita_id'");
 		return $hsl;
 	}
+
+	public function hapusberita($berita_id)
+      {
+            $this->db->where('berita_id', $berita_id);
+            return $this->db->delete('berita');
+      }
 }

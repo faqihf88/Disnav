@@ -48,6 +48,15 @@ class kelolaberita extends CI_Controller {
             $this->m_kelolaberita->edit_berita($berita_id,$berita_judul,$berita_isi,$berita_image);
             redirect('kelolaberita');
       }
+
+      public function hapusberita($berita_id)
+      {
+            $del = $this->m_kelolaberita->hapusberita($berita_id);
+            if ($del>0) {
+                  $this->session->set_flashdata('success', 'true');
+                  redirect('kelolaberita');
+            }
+      }
             
       
 

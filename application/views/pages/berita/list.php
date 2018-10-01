@@ -48,7 +48,7 @@
                 <button class="btn btn-outline-success my-2 my-sm-0 text-center" type="submit">Search</button>
               </form><br>
               <aside id="recent-posts-2" class="widget widget_recent_entries">
-                <h2 class="widget-title">Berita Terbaru</h2>
+                <h2 class="widget-title">Berita Terbaru test</h2>
                 <ul>
                   <li>
                     <a href="#!">Indonesia dan Singapura Selenggarakan Latihan Bersama Simulasi Uji Coba (TABLETOP EXERCISE) Penanganan Kecelakaan Kapal Penyeberangan</a>

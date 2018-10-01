@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets/images/favicon.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets/images/logo.png') ?>">
     <title>Distrik Navigasi</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url('assets/plugins/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
@@ -58,16 +58,16 @@
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="<?php echo base_url('assets/images/logo-icon.png') ?>" alt="homepage" class="dark-logo" />
+                            <!-- <img src="<?php echo base_url('assets/images/logo-icon.png') ?>" alt="homepage" class="dark-logo" /> -->
                             <!-- Light Logo icon -->
-                            <img src="<?php echo base_url('assets/images/logo-light-icon.png') ?>" alt="homepage" class="light-logo" />
+                            <img src="<?php echo base_url('assets/images/logo-headers.png') ?>" alt="homepage" class="light-logo" align="left" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                         <img src="<?php echo base_url('assets/images/logo-text.png') ?>" alt="homepage" class="dark-logo" />
+                         <!-- <img src="<?php echo base_url('assets/images/logo-text.png') ?>" alt="homepage" class="dark-logo" /> -->
                          <!-- Light Logo text -->
-                         <h4 class="light-logo"><b>Distrik Navigasi</b></h4>
+                         <!-- <h4 class="light-logo"><b>Distrik Navigasi</b></h4> -->
                        </a>
                 </div>
                 <!-- ============================================================== -->
@@ -83,10 +83,10 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                        <!-- <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
+                        </li> -->
                         <!-- ============================================================== -->
                         <!-- Messages -->
                         <!-- ============================================================== -->

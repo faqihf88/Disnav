@@ -19,7 +19,10 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            This is some text within a card block.
+            <img src="<?php echo base_url('assets/images/wilayah-kerja.jpg')?>">
+            <br /><br />
+            <h4 class="cards-title">WILAYAH KERJA DISTRIK NAVIGASI KELAS I TANJUNG PRIOK</h4>
+            
           </div>
         </div>
       </div>

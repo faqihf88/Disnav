@@ -3,7 +3,7 @@
 
 <!-- footer -->
 <!-- ============================================================== -->
-<footer class="footer"> © 2018 Diskrit Navigasi by Mercubuana University </footer>
+<footer class="footer"> © 2018 Distrik Navigasi by Mercubuana University </footer>
 
 <!-- ============================================================== -->
 <!-- End footer -->

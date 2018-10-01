@@ -189,11 +189,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Helpdesk</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="<?php echo base_url('helpdesk/index') ?>">Basic Forms</a></li>
-                                <li><a href="#">Form Layouts</a></li>
-                            </ul>
+                            <a class="has-arrow" href="<?php echo base_url('helpdesk/index') ?>" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Helpdesk</span></a>
                         </li>
 
 
@@ -208,7 +204,7 @@
                                             <li><a href="<?php echo site_url('kelolaberita')?>">Kelola Berita</a></li>
                                         </ul>
                                 </li>
-                                <li><a href="<?php echo site_url('formtest')?>">Kelola Sarpras</a></li>
+                                <li><a href="<?php echo site_url('kelolahelpdesk')?>">Kelola Laporan/Helpdesk</a></li>
                                 <li>
                                     <a class="has-arrow" href="#" aria-expanded="false">Menu 2.3</a>
                                     <ul aria-expanded="false" class="collapse">

@@ -37,21 +37,25 @@
                   <label class="col-form-label col-sm-2 pt-0">Pilih Laporan</label>
                   <div class="col-sm-10">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Menara suar" checked>
                       <label class="form-check-label" for="gridRadios1">Menara Suar</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Rambu suar">
                       <label class="form-check-label" for="gridRadios2">Rambu suar</label>
                     </div>
                     <div class="form-check disabled">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="pelampung suar">
                       <label class="form-check-label" for="gridRadios3">Pelampung Suar</label>
                     </div>
                   </div>
                 </div>
               </fieldset>
               <div class="form-group">
+                <label for="exampleFormControlTextarea1">Koordinat</label>
+                <textarea class="form-control" name="koordinat" id="exampleFormControlTextarea1" placeholder="Masukkan titik Koordinat Laporan Anda, Contoh : koordinat 1derajat LS, 3 derajat LB"></textarea>
+              </div>
+               <div class="form-group">
                 <label for="exampleFormControlTextarea1">Keterangan</label>
                 <textarea class="form-control" name="keterangan" id="exampleFormControlTextarea1"></textarea>
               </div>

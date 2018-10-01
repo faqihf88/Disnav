@@ -20,9 +20,9 @@
         <div class="card">
           <div class="card-body">
             <img src="<?php echo base_url('assets/images/wilayah-kerja.jpg')?>">
-            <br /><br />
+            <br /><br>
             <h4 class="cards-title">WILAYAH KERJA DISTRIK NAVIGASI KELAS I TANJUNG PRIOK</h4>
-            
+
           </div>
         </div>
       </div>

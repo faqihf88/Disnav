@@ -40,7 +40,7 @@
             </ul><br />
 
             <h4 class="card-title">ORIENTASI PELAYANAN DISTRIK NAVIGASI KELAS I TANJUNG PRIOK</h4>
-              <p class="text-justify">Mewujudkan perairan dan alur pelayaran yang aman, selamat, lancar bagi lalulintas pelayaran lokal, domestik, regional maupun internasional dengan memperhatikan aspek-aspek perlindungan lingkungan maritim, konektifitas, kepentingan strategis dan ekonomi serta program pemerintah pusat dan daerah.</p> 
+              <p class="text-justify">Mewujudkan perairan dan alur pelayaran yang aman, selamat, lancar bagi lalulintas pelayaran lokal, domestik, regional maupun internasional dengan memperhatikan aspek-aspek perlindungan lingkungan maritim, konektifitas, kepentingan strategis dan ekonomi serta program pemerintah pusat dan daerah.</p>  <br>
           </div>
         </div>
       </div>

@@ -45,7 +45,7 @@
                 <i class="ti-angle-right"></i>Pelaksanaan analisis dan evaluasi pengoperasian, pengawakan dan pemeliharaan Sarana Bantu Navigasi Pelayaran, Telekomunikasi Pelayaran, Kapal Negara Kenavigasian, Fasilitas Pangkalan, Bengkel, Pengamatan Laut, Survey Hidrografi, serta Pemantauan Alur dan Perlintasan.
               </li>
               <li>
-                <i class="ti-angle-right"></i>Pelaksanaan urusan keuangan, kepegawaian, ketatausahaan, kerumahtanggaan, hubungan masyarakat, pengumpulan dan pengolahan data, dokumentasi serta penyusunan laporan.
+                <i class="ti-angle-right"></i>Pelaksanaan urusan keuangan, kepegawaian, ketatausahaan, kerumahtanggaan, hubungan masyarakat, pengumpulan dan pengolahan data, dokumentasi serta penyusunan laporan. 
               </li>
           </div>
         </div>

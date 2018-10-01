@@ -30,9 +30,9 @@
 										<tr>
 											<th>ID Berita</th>
 											<th>Judul Berita</th>
-											<th>Isi Berita</th>
+											<!-- <th>Isi Berita</th> -->
 											<th>Gambar Berita</th>
-											<th>Action</th>
+											<th style="width: 150px;">Action</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -48,7 +48,7 @@
 											<tr>
 												<td><?php echo $id;?> </td>
 												<td><?php echo $judul;?> </td>
-												<td><?php echo $isi;?> </td>
+												<!-- <td><?php echo $isi;?> </td> -->
 												<td width="400px"><img src="<?php echo base_url('assets/images/Upload/'.$image) ?>" class="img-fluid img-thumbnail col-sm-5"></td>
 												<td><a class="btn btn-xs btn-info" href="<?php echo base_url('kelolaberita/updateberita/'.$id) ?>"> Edit</a> 
 													<a class="btn btn-xs btn-info" href="<?php echo base_url('kelolaberita/hapusberita/'.$id) ?>" onclick="return confirm('Data Akan Dihapus');">Hapus</a>
@@ -56,7 +56,7 @@
 											</tr>
 										<?php endforeach;?>
 									</tbody>
-									<tfoot>
+								<!-- 	<tfoot>
 										<tr>
 											<th>ID Berita</th>
 											<th>Judul Berita</th>
@@ -64,7 +64,7 @@
 											<th>Gambar Berita</th>
 											<th>Action</th>
 										</tr>
-									</tfoot>
+									</tfoot> -->
 								</table>
 							</div>
 						</div>

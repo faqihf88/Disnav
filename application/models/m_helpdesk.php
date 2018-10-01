@@ -1,11 +1,8 @@
 <?php 
  
 class m_helpdesk extends CI_Model{
-	function tampil_data(){
-		return $this->db->get('user');
-	}
- 
-	function input_data($data,$table){
-		$this->db->insert($table,$data);
+	function simpan_helpdesk($nama,$instansi,$inti,$keterangan){
+		$hsl=$this->db->query("INSERT INTO helpdesk (laporan_nama,laporan_instansi,laporan_inti,laporan_keterangan) VALUES ('$nama','$instansi','$inti','$keterangan')");
+		return $hsl;
 	}
 }

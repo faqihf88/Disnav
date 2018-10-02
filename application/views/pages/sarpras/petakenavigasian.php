@@ -43,48 +43,26 @@
 
               var map = new google.maps.Map(mapElement, mapOptions);
 
-              setMarkers(map, officeLocations);
-
-            }
-
-            var officeLocations = [
-              <?php
-              $data = file_get_contents('http://localhost/disnavv/Adminmenu/getdata');
-              $no=1;
-              if(json_decode($data,true)){
-                $obj = json_decode($data);
-                foreach($obj->results as $item){
-                  ?>
-                  [<?php echo $item->id ?>,
-                    '<?php echo $item->nama ?>',
-                    '<?php echo $item->kelompok ?>',
-                    <?php echo $item->latitude ?>,
-                    <?php echo $item->longtitude ?>,
-                    <?php //echo $item->lokasi ?>,
-                    <?php //echo $item->luas_area ?>,
-                    <?php //echo $item->nomordsi ?>,
-                    <?php //echo $item->penanggung_jawab ?>,
-                    <?php //echo $item->jml_sdm ?>,
-                    <?php //echo $item->wktjagaopl ?>,
-                    <?php //echo $item->perangkat ?>,
-                    <?php //echo $item->lampu ?>,
-                    <?php //echo $item->solar_cell ?>,
-                    <?php //echo $item->battery ?>,
-
-                  ],
-
-
-
-
-                  <?php
+              var officeLocations = [
+                <?php
+                $data = file_get_contents('http://localhost/disnavv/Adminmenu/getdata');
+                $no=1;
+                if(json_decode($data,true)){
+                  $obj = json_decode($data);
+                  foreach($obj->results as $item){
+                    ?>
+                    [<?php echo $item->id ?>,'<?php echo $item->nama ?>','<?php echo $item->kelompok ?>',<?php echo $item->latitude ?>,<?php echo $item->longtitude ?>],
+                    <?php
+                  }
                 }
-              }
-              ?>
-            ];
+                ?>
+              ];
+              setMarkers(map, officeLocations);
+            }
 
             function setMarkers(map, locations)
             {
-              var globalPin = 'assets/images/marker.png';
+              // var globalPin = '<?php //echo base_url('assets/images/marker.png') ?>';
 
               for (var i = 0; i < locations.length; i++) {
 
@@ -96,7 +74,7 @@
                 '<div id="content">'+
                 '<div id="siteNotice">'+
                 '</div>'+
-                '<h5 id="firstHeading" class="firstHeading">'+ office[1] + '</h5>'+
+                '<h5 id="firstHeading" align="center">'+ office[1] + '</h5>'+
                 '<div id="bodyContent">'+
                 '<a href=detail.php?id='+office[0]+'>Info Detail</a>'+
                 '</div>'+
@@ -106,7 +84,7 @@
                   position: myLatLng,
                   map: map,
                   title: office[1],
-                  icon:'assets/images/marker.png'
+                  // icon:'<?php //echo base_url('assets/images/marker.png') ?>'
                 });
 
                 google.maps.event.addListener(marker, 'click', getInfoCallback(map, contentString));

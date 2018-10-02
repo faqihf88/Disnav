@@ -219,7 +219,7 @@
                                         <li><a href="#">item 1.3.4</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Kelola Data Sarpras</a></li>
+                                <li><a href="<?php echo site_url('Adminmenu/keldatasarpras') ?>">Kelola Data Sarpras</a></li>
                                 <li><a href="<?php echo site_url('kelolahelpdesk')?>">Kelola Laporan/Helpdesk</a></li>
                             </ul>
                         </li>

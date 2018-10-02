@@ -41,7 +41,7 @@
 										foreach ($data->result_array() as $i) :
 											$id=$i['berita_id'];
 											$judul=$i['berita_judul'];
-											$isi=$i['berita_isi'];
+											// $isi=$i['berita_isi'];
 											$image=$i['berita_image'];
 										?>
 

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets/images/favicon.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets/images/logo.png') ?>">
     <title>Distrik Navigasi</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url('assets/plugins/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
@@ -58,16 +58,16 @@
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="<?php echo base_url('assets/images/logo-icon.png') ?>" alt="homepage" class="dark-logo" />
+                            <!-- <img src="<?php echo base_url('assets/images/logo-icon.png') ?>" alt="homepage" class="dark-logo" /> -->
                             <!-- Light Logo icon -->
-                            <img src="<?php echo base_url('assets/images/logo-light-icon.png') ?>" alt="homepage" class="light-logo" />
+                            <img src="<?php echo base_url('assets/images/logo-headers.png') ?>" alt="homepage" class="light-logo" align="left" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                         <img src="<?php echo base_url('assets/images/logo-text.png') ?>" alt="homepage" class="dark-logo" />
+                         <!-- <img src="<?php echo base_url('assets/images/logo-text.png') ?>" alt="homepage" class="dark-logo" /> -->
                          <!-- Light Logo text -->
-                         <h4 class="light-logo"><b>Distrik Navigasi</b></h4>
+                         <!-- <h4 class="light-logo"><b>Distrik Navigasi</b></h4> -->
                        </a>
                 </div>
                 <!-- ============================================================== -->
@@ -83,10 +83,10 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                        <!-- <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
+                        </li> -->
                         <!-- ============================================================== -->
                         <!-- Messages -->
                         <!-- ============================================================== -->
@@ -124,8 +124,8 @@
                                         <div class="dw-user-box">
                                             <div class="u-img"><img src="<?php echo base_url('assets/images/users/1.jpg') ?>" alt="user"></div>
                                             <div class="u-text">
-                                                <h4>Admin</h4>
-                                                <p class="text-muted">admin@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                                <h4>disnav</h4>
+                                                <p class="text-muted">disnav@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
@@ -161,7 +161,7 @@
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">PERSONAL</li>
                         <li>
-                            <a class="has-arrow" href="<?php echo base_url('Home') ?>" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard </span></a>
+                            <a class="has-arrow" href="<?php echo base_url('Home') ?>" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Home </span></a>
                         </li>
                         <li>
                         <li class="nav-small-cap">PERSONAL</li>
@@ -189,11 +189,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Helpdesk</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="<?php echo base_url('helpdesk/index') ?>">Basic Forms</a></li>
-                                <li><a href="#">Form Layouts</a></li>
-                            </ul>
+                            <a class="has-arrow" href="<?php echo base_url('helpdesk/index') ?>" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Helpdesk</span></a>
                         </li>
 
 
@@ -208,7 +204,7 @@
                                             <li><a href="<?php echo site_url('kelolaberita')?>">Kelola Berita</a></li>
                                         </ul>
                                 </li>
-                                <li><a href="<?php echo site_url('formtest')?>">Kelola Sarpras</a></li>
+                                <li><a href="<?php echo site_url('kelolahelpdesk')?>">Kelola Laporan/Helpdesk</a></li>
                                 <li>
                                     <a class="has-arrow" href="#" aria-expanded="false">Menu 2.3</a>
                                     <ul aria-expanded="false" class="collapse">

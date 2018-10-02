@@ -6,6 +6,8 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
           public function __construct()
           {
             parent::__construct();
+            $this->load->model('m_helpdesk');
+            $this->load->library('upload');
 
           }
           function Index()
@@ -14,11 +16,18 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
             $this->load->view('pages/helpdesk');
             $this->load->view('templates/footer');
           }
-          // function login()
-          // {
-          //   $this->load->view('halaman/login');
-          // }
 
+          function simpan()
+          {
+                  $nama = $this->input->post('nama');
+                  $instansi = $this->input->post('instansi');
+                  $inti = $this->input->post('gridRadios');
+                  $kordinat = $this->input->post('koordinat');
+                  $keterangan = $this->input->post('keterangan');
+
+                  $this->m_helpdesk->simpan_helpdesk($nama,$instansi,$inti,$kordinat,$keterangan);
+                  redirect('Helpdesk/index');
+          }
 
         }
 

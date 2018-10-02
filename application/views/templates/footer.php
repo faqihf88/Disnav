@@ -3,7 +3,7 @@
 
 <!-- footer -->
 <!-- ============================================================== -->
-<footer class="footer"> © 2018 Diskrit Navigasi by Mercubuana University </footer>
+<footer class="footer"> © 2018 Distrik Navigasi by Mercubuana University </footer>
 
 <!-- ============================================================== -->
 <!-- End footer -->
@@ -55,6 +55,11 @@
 	$(document).ready(function(){
 		$('#example2').DataTable();
 	});
+</script>
+<script type="text/javascript">
+$('.carousel').carousel({
+  interval: 2000
+})
 </script>
 </body>
 

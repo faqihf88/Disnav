@@ -15,6 +15,11 @@ class M_berita extends CI_Model{
 		$hsl=$this->db->query("SELECT * FROM berita ORDER BY berita_id DESC");
 		return $hsl;
 	}
-	
-	
+	public function cari()
+	{
+		$cari = $this->input->GET('cari', TRUE);
+		$data = $this->db->query("SELECT * from berita where berita_judul like '%$cari%' ");
+		return $data->result();
+	}
+ 
 }

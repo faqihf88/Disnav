@@ -28,10 +28,12 @@
 								<table id="example2" class="table table-striped table-bordered" style="width:100%">
 									<thead>
 										<tr>
-											<th>ID Berita</th>
-											<th>Judul Berita</th>
-											<!-- <th>Isi Berita</th> -->
-											<th>Gambar Berita</th>
+											<th>ID</th>
+											<th>Nama Pelapor</th>
+											<th>Instansi pelapor</th>
+											<th>Jenis Laporan</th>
+											<th>Koordinat laporan</th>
+											<th>Keterangan</th>
 											<th style="width: 150px;">Action</th>
 										</tr>
 									</thead>
@@ -39,19 +41,23 @@
 										<?php
 
 										foreach ($data->result_array() as $i) :
-											$id=$i['berita_id'];
-											$judul=$i['berita_judul'];
-											// $isi=$i['berita_isi'];
-											$image=$i['berita_image'];
+											$id=$i['laporan_id'];
+											$nama=$i['laporan_nama'];
+											$ln=$i['laporan_instansi'];
+											$rb=$i['laporan_inti'];
+											$lk=$i['laporan_koordinat'];
+											$keterangan=$i['laporan_keterangan']
 										?>
 
 											<tr>
 												<td><?php echo $id;?> </td>
-												<td><?php echo $judul;?> </td>
-												<!-- <td><?php echo $isi;?> </td> -->
-												<td width="400px"><img src="<?php echo base_url('assets/images/Upload/'.$image) ?>" class="img-fluid img-thumbnail col-sm-5"></td>
-												<td><a class="btn btn-xs btn-info" href="<?php echo base_url('kelolaberita/updateberita/'.$id) ?>"> Edit</a> 
-													<a class="btn btn-xs btn-info" href="<?php echo base_url('kelolaberita/hapusberita/'.$id) ?>" onclick="return confirm('Data Akan Dihapus');">Hapus</a>
+												<td><?php echo $nama;?> </td>
+												<td><?php echo $ln;?> </td>
+												<td><?php echo $rb ?></td>
+												<td><?php echo $lk ?></td>
+												<td><?php echo $keterangan ?></td>
+												<td>
+													<a class="btn btn-xs btn-info" href="<?php echo base_url('kelolahelpdesk/hapuslaporan/'.$id) ?>" onclick="return confirm('Data Akan Dihapus');">Hapus</a>
 												</td>
 											</tr>
 										<?php endforeach;?>

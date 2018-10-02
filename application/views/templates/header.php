@@ -124,8 +124,8 @@
                                         <div class="dw-user-box">
                                             <div class="u-img"><img src="<?php echo base_url('assets/images/users/1.jpg') ?>" alt="user"></div>
                                             <div class="u-text">
-                                                <h4>Admin</h4>
-                                                <p class="text-muted">admin@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                                <h4>disnav</h4>
+                                                <p class="text-muted">disnav@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>

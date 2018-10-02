@@ -37,7 +37,7 @@
                   <label class="col-form-label col-sm-2 pt-0">Pilih Laporan</label>
                   <div class="col-sm-10">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Menara suar" checked>
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Menara suar">
                       <label class="form-check-label" for="gridRadios1">Menara Suar</label>
                     </div>
                     <div class="form-check">

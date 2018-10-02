@@ -181,7 +181,13 @@
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Sarana & Prasarana</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="<?php echo base_url('sarpras/index') ?>">Peta Kenavigasian</a></li>
+                                <li>
+                                <a class="has-arrow" href="#" aria-expanded="false">Peta Kenavigasian</a>
+                                  <ul aria-expanded="false" class="collapse">
+                                      <li><a href="<?php echo base_url('sarpras/index'); ?>">Peta</a></li>
+                                      <li><a href="<?php echo base_url('sarpras/data') ?>">Data</a></li>
+                                  </ul>
+                                </li>
                                 <li><a href="<?php echo base_url('sarpras/telkompel'); ?>">Telkompel</a></li>
                                 <li><a href="<?php echo base_url('sarpras/bengkel'); ?>">Bengkel</a></li>
                                 <li><a href="<?php echo base_url('sarpras/kapal'); ?>">Kapal Negara</a></li>
@@ -204,7 +210,6 @@
                                             <li><a href="<?php echo site_url('kelolaberita')?>">Kelola Berita</a></li>
                                         </ul>
                                 </li>
-                                <li><a href="<?php echo site_url('kelolahelpdesk')?>">Kelola Laporan/Helpdesk</a></li>
                                 <li>
                                     <a class="has-arrow" href="#" aria-expanded="false">Menu 2.3</a>
                                     <ul aria-expanded="false" class="collapse">
@@ -214,7 +219,8 @@
                                         <li><a href="#">item 1.3.4</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">item 1.4</a></li>
+                                <li><a href="#">Kelola Data Sarpras</a></li>
+                                <li><a href="<?php echo site_url('kelolahelpdesk')?>">Kelola Laporan/Helpdesk</a></li>
                             </ul>
                         </li>
                     </ul>

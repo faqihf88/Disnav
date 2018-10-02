@@ -20,17 +20,22 @@
         <div class="card">
           <div class="card-body">
 
-
+              <h4 class="card-title text-center">Map</h4>
             <div id="map" style="width:100%;height:380px;"></div>
 
-            <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAbXF62gVyhJOVkRiTHcVp_BkjPYDQfH5w"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key="></script>
+
+<!-- AARTsJoe7L_kJ1kK-_nCE_l4PN3rHDHNNg&amp  API KEY-->
+
+
+
 
             <script type="text/javascript">
             function initialize() {
 
               var mapOptions = {
-                zoom: 8,
-                center: new google.maps.LatLng(-6.8441356, 107.0770152),
+                zoom: 7,  //zoom 17
+                center: new google.maps.LatLng(-6.1194908, 106.8624483),
                 disableDefaultUI: true
               };
 
@@ -44,13 +49,33 @@
 
             var officeLocations = [
               <?php
-              $data = file_get_contents('http://localhost/sigibox/ambildata.php');
+              $data = file_get_contents('http://localhost/disnavv/Adminmenu/getdata');
               $no=1;
               if(json_decode($data,true)){
                 $obj = json_decode($data);
                 foreach($obj->results as $item){
                   ?>
-                  [<?php echo $item->id_service ?>,'<?php echo $item->nama_service ?>','<?php echo $item->alamat ?>', <?php echo $item->longitude ?>, <?php echo $item->latitude ?>],
+                  [<?php echo $item->id ?>,
+                    '<?php echo $item->nama ?>',
+                    '<?php echo $item->kelompok ?>',
+                    <?php echo $item->latitude ?>,
+                    <?php echo $item->longtitude ?>,
+                    <?php //echo $item->lokasi ?>,
+                    <?php //echo $item->luas_area ?>,
+                    <?php //echo $item->nomordsi ?>,
+                    <?php //echo $item->penanggung_jawab ?>,
+                    <?php //echo $item->jml_sdm ?>,
+                    <?php //echo $item->wktjagaopl ?>,
+                    <?php //echo $item->perangkat ?>,
+                    <?php //echo $item->lampu ?>,
+                    <?php //echo $item->solar_cell ?>,
+                    <?php //echo $item->battery ?>,
+
+                  ],
+
+
+
+
                   <?php
                 }
               }
@@ -59,12 +84,12 @@
 
             function setMarkers(map, locations)
             {
-              var globalPin = 'img/marker.png';
+              var globalPin = 'assets/images/marker.png';
 
               for (var i = 0; i < locations.length; i++) {
 
                 var office = locations[i];
-                var myLatLng = new google.maps.LatLng(office[4], office[3]);
+                var myLatLng = new google.maps.LatLng(office[3], office[4]);
                 var infowindow = new google.maps.InfoWindow({content: contentString});
 
                 var contentString =

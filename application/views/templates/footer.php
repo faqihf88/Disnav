@@ -56,6 +56,11 @@
 		$('#example2').DataTable();
 	});
 </script>
+<script type="text/javascript">
+$('.carousel').carousel({
+  interval: 2000
+})
+</script>
 </body>
 
 </html>

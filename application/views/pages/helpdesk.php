@@ -19,7 +19,13 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <form action="<?php echo base_url(). 'helpdesk/simpan'; ?>" method="post">
+            <?php if ($this->session->flashdata('success')): ?>
+              <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>Data Berhasil Diinput
+              </div>
+            <?php endif; ?>
+            <form action="<?php echo base_url(). 'adminmenu/simpan'; ?>" method="post">
               <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Anda</label>
                 <div class="col-sm-10">

@@ -57,7 +57,7 @@
 												<td><?php echo $lk ?></td>
 												<td><?php echo $keterangan ?></td>
 												<td>
-													<a class="btn btn-xs btn-info" href="<?php echo base_url('kelolahelpdesk/hapuslaporan/'.$id) ?>" onclick="return confirm('Data Akan Dihapus');">Hapus</a>
+													<a class="btn btn-xs btn-info" href="<?php echo base_url('adminmenu/hapuslaporan/'.$id) ?>" onclick="return confirm('Data Akan Dihapus');">Hapus</a>
 												</td>
 											</tr>
 										<?php endforeach;?>

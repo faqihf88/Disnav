@@ -166,7 +166,7 @@
                         <li>
                         <li class="nav-small-cap">PERSONAL</li>
                             <li>
-                                <a class="has-arrow" href="<?php echo base_url('berita/daftarberita') ?>" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">berita </span></a>
+                                <a class="has-arrow" href="<?php echo base_url('daftarberita/index') ?>" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">berita </span></a>
                             </li>
                         <li>
                             <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Profil</span></a>
@@ -200,11 +200,11 @@
                                 <li>
                                     <a class="has-arrow" href="#" aria-expanded="false">Berita</a>
                                         <ul aria-expanded="false" class="collapse">
-                                            <li><a href="<?php echo site_url('berita')?>">Tambah Berita</a></li>
-                                            <li><a href="<?php echo site_url('kelolaberita')?>">Kelola Berita</a></li>
+                                            <li><a href="<?php echo site_url('adminmenu')?>">Tambah Berita</a></li>
+                                            <li><a href="<?php echo site_url('adminmenu/kelolaberita')?>">Kelola Berita</a></li>
                                         </ul>
                                 </li>
-                                <li><a href="<?php echo site_url('kelolahelpdesk')?>">Kelola Laporan/Helpdesk</a></li>
+                                <li><a href="<?php echo site_url('adminmenu/kelolahelpdesk')?>">Kelola Laporan/Helpdesk</a></li>
                                 <li>
                                     <a class="has-arrow" href="#" aria-expanded="false">Menu 2.3</a>
                                     <ul aria-expanded="false" class="collapse">

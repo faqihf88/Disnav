@@ -23,7 +23,7 @@
             <div class="row">
               <div class="col-12">
                 <h2>Masukkan Berita</h2><hr/>
-                <form action="<?php echo base_url('berita/simpan_berita')?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url('adminmenu/simpan_berita')?>" method="post" enctype="multipart/form-data">
                   <input type="text" name="judul" class="form-control" placeholder="Judul berita" required/><br/>
                   <textarea id="ckeditor" name="berita" class="form-control" required></textarea><br/>
                   <input type="file" name="filefoto" required>

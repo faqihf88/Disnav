@@ -13,18 +13,15 @@
     <title>Distrik Navigasi</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url('assets/plugins/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <!-- chartist CSS -->
-    <link href="<?php echo base_url('assets/plugins/chartist-js/dist/chartist.min.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/plugins/chartist-js/dist/chartist-init.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/plugins/css-chart/css-chart.css') ?>" rel="stylesheet">
-    <!-- Vector CSS -->
-    <link href="<?php echo base_url('assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') ?>" rel="stylesheet" />
-    <!-- Custom CSS -->
+  <!-- Custom CSS -->
     <link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet">
     <!-- You can change the theme colors from here -->
+
     <link href="<?php echo base_url('assets/css/colors/blue.css') ?>" id="theme" rel="stylesheet">
     <link href="<?php echo base_url('assets/DataTables/css/dataTables.bootstrap4.min.css')?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+    <script src="<?php echo base_url('assets/jquery/jquery-3.3.1.js') ?>">    </script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -161,12 +158,12 @@
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">PERSONAL</li>
                         <li>
-                            <a class="has-arrow" href="<?php echo base_url('Home') ?>" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Home </span></a>
+                            <a class="" href="<?php echo base_url('Home') ?>" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Home </span></a>
                         </li>
                         <li>
                         <li class="nav-small-cap">PERSONAL</li>
                             <li>
-                                <a class="has-arrow" href="<?php echo base_url('berita/daftarberita') ?>" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">berita </span></a>
+                                <a class="" href="<?php echo base_url('daftarberita/index') ?>" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">berita </span></a>
                             </li>
                         <li>
                             <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Profil</span></a>
@@ -181,7 +178,7 @@
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Sarana & Prasarana</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li>
+                              <li>
                                 <a class="has-arrow" href="#" aria-expanded="false">Peta Kenavigasian</a>
                                   <ul aria-expanded="false" class="collapse">
                                       <li><a href="<?php echo base_url('sarpras/index'); ?>">Peta</a></li>
@@ -195,7 +192,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="<?php echo base_url('helpdesk/index') ?>" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Helpdesk</span></a>
+                            <a class="" href="<?php echo base_url('helpdesk/index') ?>" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Helpdesk</span></a>
                         </li>
 
 
@@ -206,21 +203,13 @@
                                 <li>
                                     <a class="has-arrow" href="#" aria-expanded="false">Berita</a>
                                         <ul aria-expanded="false" class="collapse">
-                                            <li><a href="<?php echo site_url('berita')?>">Tambah Berita</a></li>
-                                            <li><a href="<?php echo site_url('kelolaberita')?>">Kelola Berita</a></li>
+                                            <li><a href="<?php echo site_url('adminmenu')?>">Tambah Berita</a></li>
+                                            <li><a href="<?php echo site_url('adminmenu/kelolaberita')?>">Kelola Berita</a></li>
                                         </ul>
                                 </li>
-                                <li>
-                                    <a class="has-arrow" href="#" aria-expanded="false">Menu 2.3</a>
-                                    <ul aria-expanded="false" class="collapse">
-                                        <li><a href="#">item 1.3.1</a></li>
-                                        <li><a href="#">item 1.3.2</a></li>
-                                        <li><a href="#">item 1.3.3</a></li>
-                                        <li><a href="#">item 1.3.4</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="<?php echo site_url('Adminmenu/keldatasarpras') ?>">Kelola Data Sarpras</a></li>
-                                <li><a href="<?php echo site_url('kelolahelpdesk')?>">Kelola Laporan/Helpdesk</a></li>
+                                <li><a href="<?php echo base_url('adminmenu/keldatasarpras') ?>">Kelola Data Sarpras</a></li>
+                                <li><a href="#">item 1.4</a></li>
+                                <li><a href="<?php echo site_url('adminmenu/kelolahelpdesk')?>">Kelola Laporan Helpdesk</a></li>
                             </ul>
                         </li>
                     </ul>

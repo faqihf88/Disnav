@@ -19,7 +19,6 @@
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script src="<?php echo base_url('assets/plugins/bootstrap/js/popper.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.min.js') ?>"></script>
@@ -39,7 +38,6 @@
 <!-- ============================================================== -->
 <!-- chartist chart -->
 <!-- Vector map JavaScript -->
-<script src="<?php echo base_url('assets/js/dashboard3.js') ?>"></script>
 <!-- ============================================================== -->
 <!-- Style switcher -->
 <!-- ============================================================== -->
@@ -49,13 +47,47 @@
 		CKEDITOR.replace('ckeditor');
 	});
 </script>
+
+<!-- DATATABLES -->
 <script type="text/javascript" src="<?php echo base_url('assets/DataTables/js/jquery.dataTables.min.js')?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/DataTable/js/dataTables.bootstrap4.min.js')?>"></script>
+
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<!-- <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script> -->
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+<!-- END DATATABLES -->
+
+
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#example2').DataTable();
 	});
 </script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#table1').DataTable( {
+        responsive: {
+            details: {
+                display: $.fn.dataTable.Responsive.display.modal( {
+                    // header: function ( row ) {
+                    //     var data = row.data();
+                    //     return 'Details for '+data[0]+' '+data[1];
+                    // }
+                } ),
+                // renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+                //     tableClass: 'table'
+                // } )
+            }
+        }
+    } );
+} );
+</script>
+
+
+
 <script type="text/javascript">
 $('.carousel').carousel({
   interval: 2000
@@ -64,4 +96,3 @@ $('.carousel').carousel({
 </body>
 
 </html>
-

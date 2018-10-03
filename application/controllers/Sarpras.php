@@ -7,6 +7,7 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
           {
             parent::__construct();
 
+
           }
           function Index()
           {
@@ -14,6 +15,13 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
             $this->load->view('pages/sarpras/petakenavigasian');
             $this->load->view('templates/footer');
           }
+          function Data()
+          {
+            $this->load->view('templates/header');
+            $this->load->view('pages/sarpras/data');
+            $this->load->view('templates/footer');
+          }
+
           function Telkompel()
           {
             $this->load->view('templates/header');
@@ -39,8 +47,33 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
             $this->load->view('templates/footer');
           }
 
+          //admin page
+          function Keldatasarpras()
+          {
+            $this->load->view('templates/header');
+            $this->load->view('pages/sarpras/keldata');
+            $this->load->view('templates/footer');
+          }
 
-        }
+
+
+
+
+
+          // function ambildata()
+          // {
+          //   $dataTempat = $this->m->ambildata('data')->result();
+          //
+          //   echo json_encode($dataTempat);
+          // }
+
+
+
+
+
+
+
+        } //ENC Ci_Controller
 
 
 ?>

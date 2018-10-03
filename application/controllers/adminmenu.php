@@ -136,7 +136,7 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
                   // $this->upload->do_upload('file'.$i);
                   $a = $this->upload->data();
             }
-            
+
             $berita_id=$this->input->post('id_berita');
             $berita_judul=$this->input->post('judul');
             $berita_isi=$this->input->post('berita');
@@ -153,7 +153,130 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
                   redirect('kelolaberita');
             }
       }
-}
+
+
+
+
+      function Keldatasarpras()
+      {
+        $data['data'] = $this->m_sarpras->ambildata()->result();
+        $this->load->view('templates/header');
+        $this->load->view('pages/sarpras/keldata',$data);
+        $this->load->view('templates/footer');
+        // var_dump($data);
+      }
+
+
+      function getdata()
+      {
+        $data['results'] = $this->m_sarpras->ambildata()->result_array();
+        echo json_encode($data);
+      }
+
+      // function ambildata()
+      // {
+      //   $dataTempat = $this->m->get_all_data();
+      // }
+
+
+      // function ambildata()
+      // {
+      //   $dataTempat = $this->m->ambildata('data')->result();
+      //   // return $dataTempat;
+      //   // die(print_r($dataTempat));
+      //   echo json_encode($dataTempat);
+      // }
+
+
+      function tambahdata()
+      {
+        $nama=$this->input->post('nama');
+        $kelompok=$this->input->post('kelompok');
+        $latitude=$this->input->post('latitude');
+        $longtitude=$this->input->post('longtitude');
+        $lokasi=$this->input->post('lokasi');
+        $luas=$this->input->post('luas_area');
+        $nomor=$this->input->post('nomordsi');
+        $penanggung_jawab=$this->input->post('penanggung_jawab');
+        $jml_sdm=$this->input->post('jml_sdm');
+        $wktjagaopl=$this->input->post('wktjagaopl');
+        $perangkat=$this->input->post('perangkat');
+        $lampu=$this->input->post('lampu');
+        $solar_cell=$this->input->post('solar_cell');
+        $battery=$this->input->post('battery');
+
+        if($nama==''){
+          $result['pesan']="Nama harus diisi";
+        }elseif($kelompok==''){
+          $result['pesan']="Kelompok harus di isi";
+        }elseif($latitude==''){
+          $result['pesan']="Latitude harus di isi";
+        }elseif($longtitude==''){
+          $result['pesan']="Longtitude harus di isi";
+        }elseif($lokasi==''){
+          $result['pesan']="Lokasi harus di isi";
+        }elseif($luas==''){
+          $result['pesan']="Luas harus di isi";
+        }elseif($nomor==''){
+          $result['pesan']="Nomor DSI harus di isi";
+        }elseif($penanggung_jawab==''){
+          $result['pesan']="Penanggung jawab harus di isi";
+        }elseif($jml_sdm==''){
+          $result['pesan']="Jumlah SDM harus di isi";
+        }elseif($wktjagaopl==''){
+          $result['pesan']="Waktu Jaga Operasional harus di isi";
+        }elseif($perangkat==''){
+          $result['pesan']="Perangkat harus di isi";
+        }elseif($lampu==''){
+          $result['pesan']="Lampu harus di isi";
+        }elseif($solar_cell==''){
+          $result['pesan']="Solar Cell harus di isi";
+        }elseif($battery==''){
+          $result['pesan']="Battery harus di isi";
+        }else{
+          $result['pesan']="";
+
+          $data=array(
+            'nama'=>$nama,
+            'kelompok'=>$kelompok,
+            'latitude'=>$latitude,
+            'longtitude'=>$longtitude,
+            'lokasi'=>$lokasi,
+            'luas_area'=>$luas,
+            'nomordsi'=>$nomor,
+            'penanggung_jawab'=>$penanggung_jawab,
+            'jml_sdm'=>$jml_sdm,
+            'wktjagaopl'=>$wktjagaopl,
+            'perangkat'=>$perangkat,
+            'lampu'=>$lampu,
+            'solar_cell'=>$solar_cell,
+            'battery'=>$battery
+          );
+
+          $this->m_sarpras->tambahdata($data,'data');
+        }
+
+        echo json_encode($result);
+
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+} //END CONTROLLER
+
+
 
 
 

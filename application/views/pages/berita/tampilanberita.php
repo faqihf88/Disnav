@@ -37,30 +37,12 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="col-12">
-								<form class="form-inline">
-									<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-									<button class="btn btn-outline-success my-2 my-sm-0 text-center" type="submit">Search</button>
+								< <form class="form-inline" action="<?php echo base_url('adminmenu/cari')?>" action="GET">
+									<div class="form-group">
+										<input type="text" class="form-control" id="cari" name="cari" placeholder="cari">
+									</div>
+									<input class="btn btn-primary" type="submit" value="Cari">
 								</form><br>
-								<aside id="recent-posts-2" class="widget widget_recent_entries">
-									<h2 class="widget-title">Berita Terbaru</h2>
-									<ul>
-										<li>
-											<a href="#!">Indonesia dan Singapura Selenggarakan Latihan Bersama Simulasi Uji Coba (TABLETOP EXERCISE) Penanganan Kecelakaan Kapal Penyeberangan</a>
-										</li>
-										<li>
-											<a href="#!">Tiga Negara Pantai Bekerjasama Dalam Pemeliharaan Sarana Bantu Navigasi Pelayaran di Selat Malaka dan Singapura</a>
-										</li>
-										<li>
-											<a href="#!">Serah Terima Jabatan Pejabat Struktural</a>
-										</li>
-										<li>
-											<a href="#!">PNBP VTS Batam Tahun 2017 Tembus Rp. 9 Miliar</a>
-										</li>
-										<li>
-											<a href="#!">Serah Terima 6 Unit Kapal Negara Kenavigasian Kelas I</a>
-										</li>
-									</ul>
-								</aside>
 							</div>
 						</div>
 					</div>

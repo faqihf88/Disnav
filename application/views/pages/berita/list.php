@@ -43,7 +43,7 @@
         <div class="card">
           <div class="card-body">
             <div class="col-12">
-              <form class="form-inline" action="<?php echo base_url('berita/cari')?>" action="GET">
+              <form class="form-inline" action="<?php echo base_url('adminmenu/cari')?>" action="GET">
                 <div class="form-group">
                 <input type="text" class="form-control" id="cari" name="cari" placeholder="cari">
                 </div>

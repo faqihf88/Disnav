@@ -46,8 +46,6 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
                 }else{
                    redirect('adminmenu/kelolaberita');
                      }
-                }else{
-                   redirect('adminmenu/kelolaberita');
                 }
           }
 
@@ -55,14 +53,6 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
             $x['data']=$this->m_berita->get_all_berita();
             $this->load->view('templates/header');
             $this->load->view('pages/berita/list',$x);
-            $this->load->view('templates/footer');
-          }
-
-          function tampilanberita(){
-            $kode=$this->uri->segment(3);
-            $x['data']=$this->m_berita->get_berita_by_kode($kode);
-            $this->load->view('templates/header');
-            $this->load->view('pages/berita/tampilanberita',$x);
             $this->load->view('templates/footer');
           }
           function cari() {
@@ -122,39 +112,47 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
             $this->load->view('templates/footer');
       }
       function edit_berita(){
-            $file = [
-                  'upload_path' => './assets/images/Upload',
-                  'allowed_types' => '*',
-                  'overwrite' => TRUE,
-                  'encrypt_name' => TRUE
-            ];
-            $this->load->library('upload', $file);
-            $files= $_FILES['filefoto']['name'];
-            if (!$this->upload->do_upload('filefoto')) {
-                  $this->upload->display_errors();
-            } else {
-                  // $this->upload->do_upload('file'.$i);
-                  $a = $this->upload->data();
-            }
+          $config['upload_path'] = './assets/images/Upload/'; //path folder
+              $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+              $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
+              $this->upload->initialize($config);
+              if(!empty($_FILES['filefoto']['name'])){
+                if ($this->upload->do_upload('filefoto')){
+                  $gbr = $this->upload->data();
+                  //Compress Image
+                  $config['image_library']='gd2';
+                  $config['source_image']='./assets/image/Upload/'.$gbr['file_name'];
+                  $config['create_thumb']= FALSE;
+                  $config['maintain_ratio']= FALSE;
+                  $config['quality']= '60%';
+                  $config['width']= 710;
+                  $config['height']= 420;
+                  $config['new_image']= './assets/image/Upload/'.$gbr['file_name'];
+                  $this->load->library('image_lib', $config);
+                  $this->image_lib->resize();
             $berita_id=$this->input->post('id_berita');
             $berita_judul=$this->input->post('judul');
             $berita_isi=$this->input->post('berita');
-            $berita_image=$a['file_name'];
+            $berita_image=$gbr['file_name'];
             $this->m_kelolaberita->edit_berita($berita_id,$berita_judul,$berita_isi,$berita_image);
-            redirect('kelolaberita');
+            redirect('adminmenu/kelolaberita');
       }
+    }
+  }
 
       function hapusberita($berita_id)
       {
             $del = $this->m_kelolaberita->hapusberita($berita_id);
             if ($del>0) {
                   $this->session->set_flashdata('success', 'true');
-                  redirect('kelolaberita');
+                  redirect('adminmenu/kelolaberita');
             }
       }
 
 
+
+      // ===== CONTROLLER SARPRAS =====
 
 
       function Keldatasarpras()
@@ -167,9 +165,21 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
       }
 
 
-      function getdata()
-      {
+      function getdata(){
         $data['results'] = $this->m_sarpras->ambildata()->result_array();
+        echo json_encode($data);
+      }
+
+      function detailpeta($codeid){
+        $data['data'] = $this->m_sarpras->getdata_id($codeid);
+        $this->load->view('templates/header');
+        $this->load->view('pages/sarpras/detail',$data);
+        $this->load->view('templates/footer');
+      }
+
+
+      function getdata_id(){
+        $data['results'] = $this->m_sarpras->getdata_id()->result_array();
         echo json_encode($data);
       }
 
@@ -195,71 +205,38 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
         $latitude=$this->input->post('latitude');
         $longtitude=$this->input->post('longtitude');
         $lokasi=$this->input->post('lokasi');
-        $luas=$this->input->post('luas_area');
+        $luas=$this->input->post('luasarea');
         $nomor=$this->input->post('nomordsi');
-        $penanggung_jawab=$this->input->post('penanggung_jawab');
-        $jml_sdm=$this->input->post('jml_sdm');
+        $penanggung_jawab=$this->input->post('penanggungjwb');
+        $jml_sdm=$this->input->post('jmlsdm');
         $wktjagaopl=$this->input->post('wktjagaopl');
         $perangkat=$this->input->post('perangkat');
         $lampu=$this->input->post('lampu');
-        $solar_cell=$this->input->post('solar_cell');
+        $solar_cell=$this->input->post('solarcell');
         $battery=$this->input->post('battery');
 
-        if($nama==''){
-          $result['pesan']="Nama harus diisi";
-        }elseif($kelompok==''){
-          $result['pesan']="Kelompok harus di isi";
-        }elseif($latitude==''){
-          $result['pesan']="Latitude harus di isi";
-        }elseif($longtitude==''){
-          $result['pesan']="Longtitude harus di isi";
-        }elseif($lokasi==''){
-          $result['pesan']="Lokasi harus di isi";
-        }elseif($luas==''){
-          $result['pesan']="Luas harus di isi";
-        }elseif($nomor==''){
-          $result['pesan']="Nomor DSI harus di isi";
-        }elseif($penanggung_jawab==''){
-          $result['pesan']="Penanggung jawab harus di isi";
-        }elseif($jml_sdm==''){
-          $result['pesan']="Jumlah SDM harus di isi";
-        }elseif($wktjagaopl==''){
-          $result['pesan']="Waktu Jaga Operasional harus di isi";
-        }elseif($perangkat==''){
-          $result['pesan']="Perangkat harus di isi";
-        }elseif($lampu==''){
-          $result['pesan']="Lampu harus di isi";
-        }elseif($solar_cell==''){
-          $result['pesan']="Solar Cell harus di isi";
-        }elseif($battery==''){
-          $result['pesan']="Battery harus di isi";
-        }else{
-          $result['pesan']="";
-
-          $data=array(
-            'nama'=>$nama,
-            'kelompok'=>$kelompok,
-            'latitude'=>$latitude,
-            'longtitude'=>$longtitude,
-            'lokasi'=>$lokasi,
-            'luas_area'=>$luas,
-            'nomordsi'=>$nomor,
-            'penanggung_jawab'=>$penanggung_jawab,
-            'jml_sdm'=>$jml_sdm,
-            'wktjagaopl'=>$wktjagaopl,
-            'perangkat'=>$perangkat,
-            'lampu'=>$lampu,
-            'solar_cell'=>$solar_cell,
-            'battery'=>$battery
-          );
-
-          $this->m_sarpras->tambahdata($data,'data');
+          $this->m_sarpras->tambahdata($nama,$kelompok,$latitude,$longtitude,$lokasi,$luas,$nomor,$penanggung_jawab,$jml_sdm,$wktjagaopl,$perangkat,$lampu,$solar_cell,$battery);
+          redirect('adminmenu/Keldatasarpras');
         }
 
-        echo json_encode($result);
 
 
 
+
+
+
+      function editdata($data_id)
+      {
+        $x[dataid]=$this->M_sarpras->v_editdata($data_id);
+      }
+
+      function ambilId()
+      {
+        $id=$this->input->post('id');
+        $where=array('id'=>$id);
+        $datatmpt = $this->M_sarpras->ambilId('data',$where)->result();
+
+        echo json_encode($datatmpt);
       }
 
 
@@ -270,13 +247,7 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
 
 
 
-
-
-
-
 } //END CONTROLLER
-
-
 
 
 

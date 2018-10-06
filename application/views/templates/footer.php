@@ -90,7 +90,7 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 $('.carousel').carousel({
-  interval: 3000
+  interval: 2000
 })
 </script>
 </body>

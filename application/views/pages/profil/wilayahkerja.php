@@ -40,6 +40,10 @@
             <br>
             <p class="text-justify">Distrik Navigasi Kelas I Tanjung Priok mempunyai wilayah operasional seluas 119.383 mil2 dengan panjang garis pantai sepanjang 3.418 Mil laut dengan koordinat sebagai berikut :</p>
             <img src="<?php echo base_url('assets/images/tabwilker.png')?>">
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
           </div>
         </div>
       </div>

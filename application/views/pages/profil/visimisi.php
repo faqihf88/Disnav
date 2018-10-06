@@ -33,6 +33,7 @@
               </li>
               <li>
                 <i class="ti-angle-right"></i>Melaksanakan penyediaan SDM aparatur/teknis sesuai dengan kebutuhan Distrik Navigasi.
+<<<<<<< HEAD
               </li>
             </ul><br />
 
@@ -63,6 +64,38 @@
                 <i class="ti-angle-right"></i>Terwujudnya kuantitas dan kualitas sumber daya manusia yang profesional.
               </li>
             </ul><br />  
+=======
+              </li>
+            </ul><br />
+
+            <h4 class="card-title">TUJUAN</h4>
+            <ul class="list-icons">
+              <li>
+                <i class="ti-angle-right"></i>Terwujudnya  kecukupan dan keandalan SBNP.
+              </li>
+              <li>
+                <i class="ti-angle-right"></i>Terwujudnya pelayanan Telekomunikasi Pelayaran yang Prima.
+              </li>
+              <li>
+                <i class="ti-angle-right"></i>Terwujudnya pemeliharaan kondisi sarana dan prasarana kenavigasian.
+              </li>
+              <li>
+                <i class="ti-angle-right"></i>Terwujudnya penyedian alur dan perlintasan yang aman bernavigasi.
+              </li>
+              <li>
+                <i class="ti-angle-right"></i>Terwujudnya keandalan operasional kapal kenavigasian.
+              </li>
+              <li>
+                <i class="ti-angle-right"></i>Terwujudnya dukungan fasilitas sarana dan prasarana pangkalan dan bengkel kenavigasian.
+              </li>
+              <li>
+                <i class="ti-angle-right"></i>Terwujudnya dukungan sarana penunjang operasional perkantoran.
+              </li>
+              <li>
+                <i class="ti-angle-right"></i>Terwujudnya kuantitas dan kualitas sumber daya manusia yang profesional.
+              </li>
+            </ul><br />
+>>>>>>> upstream/master
           </div>
         </div>
       </div>

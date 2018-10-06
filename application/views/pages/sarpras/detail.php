@@ -1,3 +1,46 @@
+<?php
+// $id = $_GET['id'];
+// $obj = json_decode($data);
+// $nama="";
+// $kelompok="";
+// $latitude="";
+// $longtitude="";
+// $lokasi="";
+// $luas_area="";
+// $nomordsi="";
+// $penanggung_jawab="";
+// $jml_sdm="";
+// $wktjagaopl="";
+// $perangkat="";
+// $lampu="";
+// $solar_cell="";
+// $battery="";
+// foreach($obj->results as $item){
+//   $nama.=$item->nama;
+//   $kelompok.=$item->kelompok;
+//   $latitude.=$item->latitude;
+//   $longtitude.=$item->longtitude;
+//   $lokasi.=$item->lokasi;
+//   $luas_area.=$item->luas_area;
+//   $nomordsi.=$item->nomordsi;
+//   $penanggung_jawab.=$item->penanggung_jawab;
+//   $jml_sdm.=$item->jml_sdm;
+//   $wktjagaopl.=$item->wktjagaopl;
+//   $perangkat.=$item->perangkat;
+//   $lampu.=$item->lampu;
+//   $solar_cell.=$item->solar_cell;
+//   $battery.=$item->battery;
+// }
+
+
+ ?>
+
+
+
+
+
+
+
 <div class="page-wrapper">
   <div class="container-fluid">
 
@@ -20,23 +63,19 @@
         <div class="card">
           <div class="card-body">
 
-              <h4 class="card-title text-center">Map</h4>
+              <h4 class="card-title text-center">DETAIL</h4>
             <div id="map" style="width:100%;height:380px;"></div>
 
             <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key="></script>   API V3 -->
             <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key="></script>  <!-- API V2 -->
 
             <!-- AARTsJoe7L_kJ1kK-_nCE_l4PN3rHDHNNg&amp  API KEY-->
-
-
-
-
             <script type="text/javascript">
             function initialize() {
-
+              var myLatlng = new google.maps.LatLng(<?php echo $data->latitude ?>, <?php echo $data->longtitude ?>);
               var mapOptions = {
-                zoom: 6,  //zoom 17
-                center: new google.maps.LatLng(-6.1194908, 106.8624483),
+                zoom: 15,
+                center: myLatlng  //zoom 17
                 // disableDefaultUI: true
               };
 
@@ -104,6 +143,10 @@
 
             initialize();
           </script>
+
+
+
+
 
 
         </div>

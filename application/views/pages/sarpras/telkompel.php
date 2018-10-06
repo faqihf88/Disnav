@@ -155,7 +155,7 @@
                   <div class="col-md-9">
                     <input type="text" class="form-control">
                   </div>
-                </div>          
+                </div>
 
                 <h5 class="card-title">IV. Jasa PNBP VTS/Telegram Radio</h5><br>
                 <div class="form-group row">
@@ -163,13 +163,13 @@
                   <div class="col-md-2">
                     <input type="text" class="form-control">
                   </div>
-                </div> 
+                </div>
                 <div class="form-group row">
                   <label class="control-label text-left col-md-3">Master Cable</label>
                   <div class="col-md-6">
                     <input type="text" class="form-control">
                   </div>
-                </div> 
+                </div>
 
                 <h5 class="card-title">V. Lain - lain</h5><br>
                 <div class="form-group row">

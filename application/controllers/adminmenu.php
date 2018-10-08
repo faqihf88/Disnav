@@ -112,34 +112,34 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
             $this->load->view('templates/footer');
       }
       function edit_berita(){
-          $config['upload_path'] = './assets/images/Upload/'; //path folder
-              $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-              $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+        $config['upload_path'] = './assets/images/Upload/'; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
-              $this->upload->initialize($config);
-              if(!empty($_FILES['filefoto']['name'])){
-                if ($this->upload->do_upload('filefoto')){
-                  $gbr = $this->upload->data();
-                  //Compress Image
-                  $config['image_library']='gd2';
-                  $config['source_image']='./assets/image/Upload/'.$gbr['file_name'];
-                  $config['create_thumb']= FALSE;
-                  $config['maintain_ratio']= FALSE;
-                  $config['quality']= '60%';
-                  $config['width']= 710;
-                  $config['height']= 420;
-                  $config['new_image']= './assets/image/Upload/'.$gbr['file_name'];
-                  $this->load->library('image_lib', $config);
-                  $this->image_lib->resize();
+        $this->upload->initialize($config);
+        if(!empty($_FILES['filefoto']['name'])){
+          if ($this->upload->do_upload('filefoto')){
+            $gbr = $this->upload->data();
+            //Compress Image
+            $config['image_library']='gd2';
+            $config['source_image']='./assets/image/Upload/'.$gbr['file_name'];
+            $config['create_thumb']= FALSE;
+            $config['maintain_ratio']= FALSE;
+            $config['quality']= '60%';
+            $config['width']= 710;
+            $config['height']= 420;
+            $config['new_image']= './assets/image/Upload/'.$gbr['file_name'];
+            $this->load->library('image_lib', $config);
+            $this->image_lib->resize();
             $berita_id=$this->input->post('id_berita');
             $berita_judul=$this->input->post('judul');
             $berita_isi=$this->input->post('berita');
             $berita_image=$gbr['file_name'];
             $this->m_kelolaberita->edit_berita($berita_id,$berita_judul,$berita_isi,$berita_image);
             redirect('adminmenu/kelolaberita');
+          }
+        }
       }
-    }
-  }
 
       function hapusberita($berita_id)
       {
@@ -158,6 +158,7 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
       function Keldatasarpras()
       {
         $data['data'] = $this->m_sarpras->ambildata()->result();
+        // die(print_r($data));
         $this->load->view('templates/header');
         $this->load->view('pages/sarpras/keldata',$data);
         $this->load->view('templates/footer');
@@ -169,19 +170,25 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
         $data['results'] = $this->m_sarpras->ambildata()->result_array();
         echo json_encode($data);
       }
+      function wheredata($id)
+      {
+        $where = array('id' => $id);
+        $data['results'] = $this->m_sarpras->wheredata($where)->result_array();
+        echo json_encode($data);
+      }
 
       function detailpeta($codeid){
-        $data['data'] = $this->m_sarpras->getdata_id($codeid);
+        $data['datas'] = $this->m_sarpras->getdata_id($codeid)->row();
         $this->load->view('templates/header');
         $this->load->view('pages/sarpras/detail',$data);
         $this->load->view('templates/footer');
       }
 
 
-      function getdata_id(){
-        $data['results'] = $this->m_sarpras->getdata_id()->result_array();
-        echo json_encode($data);
-      }
+      // function getdata_id(){
+      //   $data['results'] = $this->m_sarpras->getdata_id()->result_array();
+      //   echo json_encode($data);
+      // }
 
       // function ambildata()
       // {
@@ -240,9 +247,50 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
       }
 
 
+      function modal_edit(){
+        $dataid = $this->input->post('idmodal');
+        $nama = $this->input->post('nama');
+        $kelompok = $this->input->post('kelompok');
+        $latitude = $this->input->post('latitude');
+        $longtitude = $this->input->post('longtitude');
+        $lokasi = $this->input->post('lokasi');
+        $luasarea = $this->input->post('luasarea');
+        $nomordsi = $this->input->post('nomordsi');
+        $penanggungjwb = $this->input->post('penanggungjwb');
+        $jumlahsdm = $this->input->post('jumlahsdm');
+        $wktjagaopl = $this->input->post('wktjagaopl');
+        $perangkat = $this->input->post('perangkat');
+        $lampu = $this->input->post('lampu');
+        $solarcell = $this->input->post('solarcell');
+        $battery = $this->input->post('battery');
+        // $data = array('nama' => $nama,
+        //               'kelompok'=>$kelompok,
+        //               'latitude'=>$latitude,
+        //               'longtitude'=>$longtitude,
+        //               'lokasi'=>$lokasi,
+        //               'luas_area'=>$luasarea,
+        //               'nomordsi'=>$nomordsi,
+        //               'penanggung_jawab'=>$penanggungjwb,
+        //               'jml_sdm'=>$jumlahsdm,
+        //               'wktjagaopl'=>$wktjagaopl,
+        //               'perangkat'=>$perangkat,
+        //               'lampu'=>$lampu,
+        //               'solar_cell'=>$solarcell,
+        //               'battery'=>$battery
+        //             );
+        // $where = array('id' => $dataid);
+        // $resut = $this->m_sarpras->edit_modal('data',$data,$where);
+        $this->m_sarpras->modal_edit($dataid,$nama,$kelompok,$latitude,$longtitude,$lokasi,$luasarea,$nomordsi,$penanggungjwb,$jumlahsdm,$wktjagaopl,$perangkat,$lampu,$solarcell,$battery);
+        redirect('adminmenu/Keldatasarpras');
+      }
 
-
-
+      function hapusdata($blabla){
+        $delete = $this->m_sarpras->hapusdata($blabla);
+        if ($delete>0) {
+          $this->session->set_flashdata('sucess','true');
+          redirect('adminmenu/keldatasarpras');
+        }
+      }
 
 
 

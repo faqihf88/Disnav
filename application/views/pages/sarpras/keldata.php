@@ -75,8 +75,8 @@
                 <td><?= $r->luas_area; ?></td>
                 <td><?= $r->nomordsi; ?></td>
                 <td><?= $r->penanggung_jawab; ?></td>
-                <td> <a href="#form" data-toggle="modal" class="btn btn-primary" data-toggle="modal" data-target="#modal_edit<?php echo $r->id;?>">Edit</a>
-                  <a href="#form" data-toggle="modal" class="btn btn-danger">Delete</a>
+                <td> <a href="#form" data-toggle="modal" class="btn btn-primary" data-toggle="modal" data-target="#modal_edit<?= $r->id; ?>">Edit</a>
+                  <a href="<?php echo base_url('adminmenu/hapusdata/'.$r->id) ?>" onclick="return confirm('Data Akan Dihapus');"class="btn btn-danger">Delete</a>
                 </td>
                 <td><?= $r->jml_sdm; ?></td>
                 <td><?= $r->wktjagaopl; ?></td>
@@ -89,60 +89,6 @@
 
           </tbody>
         </table>
-
-
-                                    <!-- ===== MODAL EDIT DATA ===== -->
-              <!-- <?php
-              // foreach($data->result_array() as $i):
-              //     $dataid=$i['id'];
-              //     $datanama=$i['nama'];
-              //     $datakelompok=$i['kelompok'];
-              //     $datalatitude=$i['latitude'];
-              //     $datalongtitude=$i['longtitude'];
-              //     $datalokasi=$i['lokasi'];
-              //     $dataluas_area=$i['luas_area'];
-              //     $datanomordsi=$i['nomordsi'];
-              //     $datapenanggung_jawab=$i['penanggung_jawab'];
-              //     $datajml_sdm=$i['jml_sdm'];
-              //     $datawktjagaopl=$i['wktjagaopl'];
-              //     $dataperangkat=$i['perangkat'];
-              //     $datalampu=$i['lampu'];
-              //     $datasolar_cell=$i['solar_cell'];
-              //     $databattery=$i['battery'];
-               ?>
-               <div class="modal fade" id="modal_edit<?php //echo $dataid;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-                 <div class="modal-dialog">
-                   <div class="modal-content">
-                     <div class="modal-header">
-                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                       <h3 class="modal-title" id="myModalLabel">Edit Data</h3>
-                     </div>
-
-                     <form class="form-horizontal" method="post" action="<?php //echo base_url().'index.php/barang/edit_barang'?>">
-                                     <div class="modal-body">
-
-                                         <div class="form-group">
-                                             <label class="control-label col-xs-3" >Kode Barang</label>
-                                             <div class="col-xs-8">
-                                                 <input name="kode_barang" value="<?php //echo $barang_id;?>" class="form-control" type="text" placeholder="Kode Barang..." readonly>
-                                             </div>
-                                         </div>
-
-                                         <div class="form-group">
-                                             <label class="control-label col-xs-3" >Nama Barang</label>
-                                             <div class="col-xs-8">
-                                                 <input name="nama_barang" value="<?php //echo $barang_nama;?>" class="form-control" type="text" placeholder="Nama Barang..." required>
-                                             </div>
-                                         </div>
-
-
-                   </div>
-                 </div>
-               </div>
-             <?php //endforeach;?> -->
-                 <!--END MODAL EDIT DATA-->
-
-
 
       </div>
     </div> <!-- END DIV CLASS ROW -->
@@ -256,24 +202,152 @@
 </div> <!-- END CARD BODY -->
 </div> <!-- END CARD -->
 
-
-
-
-
-
-
-<!-- <div class="row">
-<div class="col-lg-12 align-self-center">
-<div class="card">
-<div class="card-body">
-
-
-</div>
-</div>
-</div>
-</div> -->
-
-
-
 </div><!-- END CONTAINER FLUID -->
 </div> <!-- END PAGE WRAPPER -->
+
+
+                                    <!-- ===== MODAL EDIT DATA ===== -->
+              <?php
+               foreach($data as $i):
+              //     $dataid=$i['id'];
+              //     $datanama=$i['nama'];
+              //     $datakelompok=$i['kelompok'];
+              //     $datalatitude=$i['latitude'];
+              //     $datalongtitude=$i['longtitude'];
+              //     $datalokasi=$i['lokasi'];
+              //     $dataluas_area=$i['luas_area'];
+              //     $datanomordsi=$i['nomordsi'];
+              //     $datapenanggung_jawab=$i['penanggung_jawab'];
+              //     $datajml_sdm=$i['jml_sdm'];
+              //     $datawktjagaopl=$i['wktjagaopl'];
+              //     $dataperangkat=$i['perangkat'];
+              //     $datalampu=$i['lampu'];
+              //     $datasolar_cell=$i['solar_cell'];
+              //     $databattery=$i['battery'];
+               ?>
+               <div class="modal fade" id="modal_edit<?php echo $i->id;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+                 <div class="modal-dialog modal-lg">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                       <h3 class="modal-title" id="myModalLabel">Edit Data</h3>
+                     </div>
+
+                     <form class="form-horizontal" method="post" action="<?php echo base_url().'adminmenu/modal_edit'?>">
+                                     <div class="modal-body">
+                                       <input type="text" name="idmodal" value="<?= $i->id; ?>">
+                                       <div class="row">
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Nama</label>
+                                             <div class="col-xs-8">
+                                                 <input name="nama" value="<?php echo $i->nama;?>" class="form-control" type="text" placeholder="Nama..." required>
+                                             </div>
+                                         </div>
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Kelompok</label>
+                                             <div class="col-xs-8">
+                                                 <input name="kelompok" value="<?php echo $i->kelompok;?>" class="form-control" type="text" placeholder="Kelompok..." required>
+                                             </div>
+                                         </div>
+                                       </div>
+
+                                       <div class="row">
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Latitude</label>
+                                             <div class="col-xs-8">
+                                                 <input name="latitude" value="<?php echo $i->latitude;?>" class="form-control" type="text" placeholder="Latitude..." required>
+                                             </div>
+                                         </div>
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Longtitude</label>
+                                             <div class="col-xs-8">
+                                                 <input name="longtitude" value="<?php echo $i->longtitude;?>" class="form-control" type="text" placeholder="Longtitude..." required>
+                                             </div>
+                                         </div>
+                                       </div>
+
+                                       <div class="row">
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Lokasi</label>
+                                             <div class="col-xs-8">
+                                                 <input name="lokasi" value="<?php echo $i->lokasi;?>" class="form-control" type="text" placeholder="Lokasi..." required>
+                                             </div>
+                                         </div>
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Luas Area</label>
+                                             <div class="col-xs-8">
+                                                 <input name="luasarea" value="<?php echo $i->luas_area;?>" class="form-control" type="text" placeholder="Luas Area..." required>
+                                             </div>
+                                         </div>
+                                         </div>
+                                         <div class="row">
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Nomor DSI</label>
+                                             <div class="col-xs-8">
+                                                 <input name="nomordsi" value="<?php echo $i->nomordsi;?>" class="form-control" type="text" placeholder="Nomor DSI..." required>
+                                             </div>
+                                         </div>
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Penanggung Jawab</label>
+                                             <div class="col-xs-8">
+                                                 <input name="penanggungjwb" value="<?php echo $i->penanggung_jawab;?>" class="form-control" type="text" placeholder="Penanggung Jawab..." required>
+                                             </div>
+                                         </div>
+                                         </div>
+
+                                          <div class="row">
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Jumlah SDM</label>
+                                             <div class="col-xs-8">
+                                                 <input name="jumlahsdm" value="<?php echo $i->jml_sdm;?>" class="form-control" type="text" placeholder="Jumlah SDM..." required>
+                                             </div>
+                                         </div>
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Waktu Jaga Operasional</label>
+                                             <div class="col-xs-8">
+                                                 <input name="wktjagaopl" value="<?php echo $i->wktjagaopl;?>" class="form-control" type="text" placeholder="Waktu Jaga Operasional..." required>
+                                             </div>
+                                         </div>
+                                         </div>
+                                         <div class="row">
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Perangkat</label>
+                                             <div class="col-xs-8">
+                                                 <input name="perangkat" value="<?php echo $i->perangkat;?>" class="form-control" type="text" placeholder="Perangkat..." required>
+                                             </div>
+                                         </div>
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Lampu</label>
+                                             <div class="col-xs-8">
+                                                 <input name="lampu" value="<?php echo $i->lampu;?>" class="form-control" type="text" placeholder="Lmapu..." required>
+                                             </div>
+                                         </div>
+                                         </div>
+                                         <div class="row">
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Solar Cell</label>
+                                             <div class="col-xs-8">
+                                                 <input name="solarcell" value="<?php echo $i->solar_cell;?>" class="form-control" type="text" placeholder="Solar Cell..." required>
+                                             </div>
+                                         </div>
+                                         <div class="form-group col-md-6">
+                                             <label class="control-label col-xs-3" >Battery</label>
+                                             <div class="col-xs-8">
+                                                 <input name="battery" value="<?php echo $i->battery;?>" class="form-control" type="text" placeholder="Battery..." required>
+                                             </div>
+                                         </div>
+                                         </div>
+
+                                         <div class="modal-footer">
+                                           <button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
+                                           <input type="submit" name="" class="btn btn-primary pull-right" value="Update Data">
+                                         </div>
+                                       </form>
+
+
+                   </div>
+                 </div>
+               </div>
+               </div>
+             <?php endforeach;?>
+                 <!--END MODAL EDIT DATA-->

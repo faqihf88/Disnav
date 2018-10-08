@@ -38,6 +38,12 @@
                   <input type="text" class="form-control" name="instansi" id="inputPassword3" placeholder="Input Instansi anda">
                 </div>
               </div>
+              <div class="form-group row">
+                <label for="inputPassword4" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="Email" class="form-control" name="email" id="inputPassword4" placeholder="Input Email Anda">
+                </div>
+              </div>
               <fieldset class="form-group">
                 <div class="row">
                   <label class="col-form-label col-sm-2 pt-0">Pilih Laporan</label>

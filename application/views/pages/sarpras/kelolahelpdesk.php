@@ -31,6 +31,7 @@
 											<th>ID</th>
 											<th>Nama Pelapor</th>
 											<th>Instansi pelapor</th>
+											<th>Email Pelapor</th>
 											<th>Jenis Laporan</th>
 											<th>Koordinat laporan</th>
 											<th>Keterangan</th>
@@ -44,6 +45,7 @@
 											$id=$i['laporan_id'];
 											$nama=$i['laporan_nama'];
 											$ln=$i['laporan_instansi'];
+											$email=$i['laporan_email'];
 											$rb=$i['laporan_inti'];
 											$lk=$i['laporan_koordinat'];
 											$keterangan=$i['laporan_keterangan']
@@ -53,6 +55,7 @@
 												<td><?php echo $id;?> </td>
 												<td><?php echo $nama;?> </td>
 												<td><?php echo $ln;?> </td>
+												<td><?php echo $email ?></td>
 												<td><?php echo $rb ?></td>
 												<td><?php echo $lk ?></td>
 												<td><?php echo $keterangan ?></td>

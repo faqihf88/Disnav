@@ -33,6 +33,55 @@
 <!--stickey kit -->
 <!--Custom JavaScript -->
 <script src="<?php echo base_url('assets/js/custom.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/plugins/moment/moment.js') ?>"></script>
+<script src="<?php echo base_url('assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') ?>"></script>
+<!-- Clock Plugin JavaScript -->
+<script src="<?php echo base_url('assets/plugins/clockpicker/dist/jquery-clockpicker.min.js') ?>"></script>
+
+<script>
+    // MAterial Date picker    
+    $('#mdate').bootstrapMaterialDatePicker({
+        weekStart: 0,
+        time: false
+    });
+    $('#mdate1').bootstrapMaterialDatePicker({
+        weekStart: 0,
+        time: false
+    });
+    $('#timepicker').bootstrapMaterialDatePicker({
+        format: 'HH:mm',
+        time: true,
+        date: false
+    });
+    $('#date-format').bootstrapMaterialDatePicker({
+        format: 'dddd DD MMMM YYYY - HH:mm'
+    });
+
+    $('#min-date').bootstrapMaterialDatePicker({
+        format: 'DD/MM/YYYY HH:mm',
+        minDate: new Date()
+    });
+    // Clock pickers
+    $('#single-input').clockpicker({
+        placement: 'bottom',
+        align: 'left',
+        autoclose: true,
+        'default': 'now'
+    });
+    $('.clockpicker').clockpicker({
+        donetext: 'Done',
+    }).find('input').change(function() {
+        console.log(this.value);
+    });
+    $('#check-minutes').click(function(e) {
+        // Have to stop propagation here
+        e.stopPropagation();
+        input.clockpicker('show').clockpicker('toggleView', 'minutes');
+    });
+    if (/mobile/i.test(navigator.userAgent)) {
+        $('input').prop('readOnly', true);
+    }
+    </script>
 <!-- ============================================================== -->
 <!-- This page plugins -->
 <!-- ============================================================== -->
@@ -112,6 +161,9 @@ $('.carousel').carousel({
   interval: 2000
 })
 </script>
+
+ 
+
 </body>
 
 </html>

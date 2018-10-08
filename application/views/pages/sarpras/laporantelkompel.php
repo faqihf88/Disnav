@@ -50,23 +50,34 @@
                   </div>
                 </div>
                 <div class="form-group row">
+                  
                   <label class="control-label text-left col-md-3">Tanggal</label>
                   <div class="col-md-3">
-                    <input type="date" class="form-control" name="tgl1">
+                    <input type="text" class="form-control" placeholder="2018-09-03" name="tgl1" id="mdate" data-dtp="dtp_QCnhf"> 
                   </div>
                   <label class="control-label text-left col-md-1">s/d</label>
                   <div class="col-md-3">
-                    <input type="date" class="form-control" name="tgl2">
+                    <input type="text" class="form-control" placeholder="2018-09-04" name="tgl2" id="mdate1" data-dtp="dtp_QCnhf"> 
                   </div>
                 </div>
                 <div class="form-group row">
                   <label class="control-label text-left col-md-3">Waktu</label>
                   <div class="col-md-3">
-                    <input type="time" class="form-control" name="jam1">
+                    <div class="input-group clockpicker">
+	                    <input type="text" class="form-control" name="jam1" value="09:30"> 
+                        <span class="input-group-addon"> 
+                            <span class="fa fa-clock-o"></span> 
+                        </span>
+                    </div>
                   </div>
                   <label class="control-label text-left col-md-1">s/d</label>
                   <div class="col-md-3">
-                    <input type="time" class="form-control" name="jam2">
+                    <div class="input-group clockpicker">
+	                    <input type="text" class="form-control" name="jam2" value="09:30"> 
+                        <span class="input-group-addon"> 
+                            <span class="fa fa-clock-o"></span> 
+                        </span>
+                    </div>
                   </div>
                 </div>
 
@@ -213,10 +224,10 @@
                   <div class="col-md-12">
                     <div class="row">
                       <div class="offset-sm-3 col-md-9">
+                        <button type="reset" class="btn btn-danger">Cancel</button>
                         <button type="submit" class="btn btn-success">
                           <i class="fa fa-check"></i>Submit
                         </button>
-                        <button type="reset" class="btn btn-danger">Cancel</button>
                       </div>
                     </div>
                   </div>

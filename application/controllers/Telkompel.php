@@ -60,7 +60,7 @@ if (! defined('BASEPATH') ) exit('No direct script access allowed');
 
                   // $this->m_helpdesk->simpan_helpdesk($nama,$instansi,$inti,$kordinat,$keterangan);
                   // redirect('Helpdesk/index');
-          }
+          }  
 
         }
 

@@ -1,8 +1,8 @@
 <?php 
  
 class m_helpdesk extends CI_Model{
-	function simpan_helpdesk($nama,$instansi,$inti,$kordinat,$keterangan){
-		$hsl=$this->db->query("INSERT INTO helpdesk (laporan_nama,laporan_instansi,laporan_inti,laporan_koordinat,laporan_keterangan) VALUES ('$nama','$instansi','$inti','$kordinat','$keterangan')");
+	function simpan_helpdesk($nama,$instansi,$email,$inti,$kordinat,$keterangan){
+		$hsl=$this->db->query("INSERT INTO helpdesk (laporan_nama,laporan_instansi,laporan_email,laporan_inti,laporan_koordinat,laporan_keterangan) VALUES ('$nama','$instansi','$email','$inti','$kordinat','$keterangan')");
 		return $hsl;
 	}
 	function show_laporan(){

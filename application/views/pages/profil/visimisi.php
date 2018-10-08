@@ -62,7 +62,7 @@
               <li>
                 <i class="ti-angle-right"></i>Terwujudnya kuantitas dan kualitas sumber daya manusia yang profesional.
               </li>
-            </ul><br />
+            </ul><br />  
           </div>
         </div>
       </div>

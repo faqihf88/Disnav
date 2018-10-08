@@ -19,7 +19,12 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
+<<<<<<< HEAD
+            <img src="<?php echo base_url('assets/images/struktur-org.png'); ?>" width="101%" height="100%">
+          </div>
+=======
             <img src="<?php echo base_url('assets/images/struktur-org.png'); ?>" width="101%" height="100%">    
+>>>>>>> upstream/master
         </div>
       </div>
     </div>
